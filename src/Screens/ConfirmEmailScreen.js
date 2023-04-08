@@ -6,25 +6,21 @@ import SocialSIgnin from '../Components/SocialSIgnin';
 
 
 const ConfirmEmailScreen = () => {
-    const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [conPassWord, setConPassWord] = useState("");
+    const [code, setCode] = useState("");
 
 
-    const onRegister = () => {
-        console.warn("Register is Pressed")
+
+    const onConfirm = () => {
+        console.warn("Confirm is Pressed")
     }
-    const onSigninPressed = () => {
+    const BackToSignin = () => {
         console.log("Sign in")
     }
 
-    const onPressTerms =() => {
-        console.log("Terms")
+    const onResendCode =()=>{
+        console.log("Resend Code")
     }
-    const onPressPolicy = () => {
-        console.log("Policy")
-    }
+
 
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -32,47 +28,26 @@ const ConfirmEmailScreen = () => {
                 <Text style={styles.title}>Confirm Email </Text>
 
                 <CustomInput
-                    placeholder="Username"
-                    value={username}
-                    setValue={setUsername}
-                />
-                <CustomInput
-                    placeholder="Email"
-                    value={email}
-                    setValue={setEmail}
+                    placeholder="Enter your Confirmation Code"
+                    value={code}
+                    setValue={setCode}
                 />
 
-                <CustomInput
-                    placeholder="Password"
-                    value={password}
-                    setValue={setPassword}
-                    secureTextEntry={true}
-                />
-                <CustomInput
-                    placeholder="Confirm Password"
-                    value={conPassWord}
-                    setValue={setConPassWord}
-                    secureTextEntry={true}
+                <CustomButton text="Confirm Code" onPress={onConfirm} />
+
+
+
+                <CustomButton
+                    text="Request new Code "
+                    onPress={onResendCode}
+                    type="SECONDARY"
                 />
 
-                <CustomButton text="Register" onPress={onRegister} />
-
-                <Text style={styles.text}>
-                    By registering, you Confirm to our
-                    <Text style={styles.link} onPress={onPressTerms}>
-                        {' '}Terms{' '}
-                    </Text>
-                    of use and <Text style={styles.link} onPress={onPressPolicy}>
-                        {' '}Privacy policy
-                    </Text>
-                </Text>
-                {/* social signs  */}
-
-                <SocialSIgnin />
-
-
-
-                <CustomButton text="Have an account? Sign in" onPress={onSigninPressed} type="TERTIARY" />
+                <CustomButton
+                    text="Back to Sign in "
+                    onPress={BackToSignin}
+                    type="TERTIARY"
+                />
 
 
             </View>
@@ -98,7 +73,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: "bold",
         textAlign: "center",
-        color: "051C60",
+        color: "#121212",
         margin: 10
     },
 })
