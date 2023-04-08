@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import logo from '../../assets/images/logo.png'
 import CustomInput from '../Components/CustomInput';
 import CustomButton from '../Components/CustomButton';
+import SocialSIgnin from '../Components/SocialSIgnin';
+
 
 const SIgninScreen = () => {
     const { height } = useWindowDimensions();
@@ -15,16 +17,7 @@ const SIgninScreen = () => {
     const onForgotPress = () => {
         console.warn("Forgot password")
     }
-    const signinWithFacebook = () => {
-        console.log("Sign with faceBook")
-    }
 
-    const onSigninWithGoogle = () => {
-        console.log("Sign with google")
-    }
-    const onSiginwithApple = () => {
-        console.log("Sign with Apple")
-    }
     const onSignUpPress = () => {
         console.log("Sign up")
     }
@@ -56,26 +49,7 @@ const SIgninScreen = () => {
                 <CustomButton text="Forgot password" onPress={onForgotPress} type="TERTIARY" />
 
                 {/* social signs  */}
-
-                <CustomButton
-                    text="Sign in with
-            Facebook"
-                    onPress={signinWithFacebook}
-                    bgColor="#E7EAf4"
-                    fColor="#4765A9"
-                />
-                <CustomButton
-                    text="Sign in with google"
-                    onPress={onSigninWithGoogle}
-                    bgColor="#FAE9EA"
-                    fColor="#DD4D44"
-                />
-                <CustomButton
-                    text="Sign in with Apple"
-                    onPress={onSiginwithApple}
-                    bgColor="#e3e3e3"
-                    fColor="#363636"
-                />
+                <SocialSIgnin />
 
 
                 <CustomButton text="Dont have an Account? Create one" onPress={onSignUpPress} type="TERTIARY" />
