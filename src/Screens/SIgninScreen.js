@@ -2,7 +2,7 @@ import { View, Text, Image, StyleSheet, useWindowDimensions } from 'react-native
 import React, { useState } from 'react'
 import logo from '../../assets/images/logo.png'
 import CustomInput from '../Components/CustomInput';
-
+import customButton from '../Components/CustomButton';
 
 const SIgninScreen = () => {
     const { height } = useWindowDimensions();
@@ -17,8 +17,20 @@ const SIgninScreen = () => {
                 style={[styles.logo, { height: height * 0.2 }]}
             />
 
-            <CustomInput placeholder="Username" value={username} setValue={setUsername} />
-            <CustomInput placeholder="Password" value={password} setValue={setPassword} secureTextEntry={true} />
+            <CustomInput
+                placeholder="Username"
+                value={username}
+                setValue={setUsername}
+            />
+
+            <CustomInput p
+                laceholder="Password"
+                value={password}
+                setValue={setPassword}
+                secureTextEntry={true}
+            />
+
+            <customButton />
         </View>
     )
 }
